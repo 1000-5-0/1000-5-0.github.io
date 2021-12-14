@@ -32,9 +32,9 @@
 }
 
 .archive__subtitle {
-  margin: 1.414em 0 0.5em;
+  margin: 1.414em 0 0;
   padding-bottom: 0.5em;
-  font-size: $type-size-5;
+  // font-size: ;
   color: $muted-text-color;
   border-bottom: 1px solid $border-color;
 
@@ -57,6 +57,7 @@
     top: 0;
     right: 0;
     bottom: 0;
+    color: #fff; // 여기????
   }
 
   a + a {
@@ -69,13 +70,14 @@
   .archive__item-title {
     margin-top: 1em;
     border-bottom: none;
+    border-radius: 1rem;
   }
 }
 
 .archive__item-excerpt {
   margin-top: 0;
-  font-size: $type-size-6;
-
+  font-size: 0.8rem;
+  font-weight: normal;
   & + p {
     text-indent: 0;
   }
@@ -138,7 +140,6 @@
 .archive {
   .grid__wrapper {
     /* extend grid elements to the right */
-
     @include breakpoint($large) {
       margin-right: -1 * $right-sidebar-width-narrow;
     }
@@ -199,14 +200,6 @@
   .page__meta {
     margin: 0 0 4px;
     font-size: 0.6em;
-  }
-
-  .page__meta-sep {
-    display: block;
-
-    &::before {
-      display: none;
-    }
   }
 
   .archive__item-title {
@@ -460,4 +453,29 @@
 	.feature__wrapper {
 		display: inline-block;
 	}
+}
+
+
+.archive__item-title-sub{
+  display: block;
+  margin-bottom: 2rem;
+}
+
+.archive__item-title-list{
+  display: grid;
+  margin-bottom: 2rem;
+}
+
+.archive__item-title-subtitle {
+  float: left;
+  font-size: large;
+  font-weight: normal;
+}
+.archive__item-title-subtitle-other {
+  font-size: large;
+  font-weight: normal;
+}
+.archive__item-title-time{
+  float:right;
+  font-size: small;
 }

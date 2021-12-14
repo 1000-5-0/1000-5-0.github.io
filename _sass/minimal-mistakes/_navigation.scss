@@ -56,7 +56,8 @@
   margin-top: 1em;
   padding-top: 1em;
   width: 100%;
-
+  display: flex;
+  justify-content: center;
   ul {
     margin: 0;
     padding: 0;
@@ -133,7 +134,7 @@
     border-radius: $border-radius;
 
     &:hover {
-      @include yiq-contrasted($muted-text-color);
+      @include yiq-contrasted(#736e76);
     }
 
     &:first-child {
@@ -162,6 +163,7 @@
   margin-top: 2em;
   padding-top: 2em;
   border-top: 1px solid $border-color;
+  border-radius: 1rem;
 }
 
 /*
@@ -179,32 +181,55 @@
   min-height: $nav-height;
   background: $background-color;
 
-  a {
+  h3 {
     display: block;
     margin: 0 1rem;
-    color: $masthead-link-color;
+    // color: $masthead-link-color;
+    color: $primary-color;
     text-decoration: none;
-    -webkit-transition: none;
-    transition: none;
-
-    &:hover {
-      color: $masthead-link-color-hover;
-    }
-
     &.site-logo {
       margin-left: 0;
       margin-right: 0.5rem;
     }
-
-    &.site-title {
+  }
+  a {
+    display: block;
+    margin: 0 1rem;
+    // color: $masthead-link-color;
+    color: $primary-color;
+    text-decoration: none;
+    // &:hover {
+    //   color: $masthead-link-color-hover;
+    // }
+    // background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+    // background-repeat: no-repeat;
+    // background-size: 100% 30%;
+    // background-position: 0 88%;
+    // transition: background-size 0.25s ease-in;
+    // &:hover {
+    //   // color: $masthead-link-color-hover;
+    //   background-size: 100% 100%;
+    // }
+    &.site-logo {
       margin-left: 0;
+      margin-right: 0.5rem;
+      background-image: linear-gradient(120deg, #360033 0%, #0b8793 100%);
+      background-repeat: no-repeat;
+      background-size: 100% 30%;
+      background-position: 0 88%;
+      transition: background-size 0.25s ease-in;
+      &:hover {
+        // color: $masthead-link-color-hover;
+        background-size: 100% 100%;
+      }
+    }
+  
+    &.site-title {
+      margin-left: 2em;
     }
   }
-
-  img {
-    -webkit-transition: none;
-    transition: none;
-  }
+    
+    
 
   &__toggle {
     -ms-flex-item-align: center;
@@ -236,22 +261,23 @@
 
     a {
       position: relative;
-
-      &:before {
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        height: 4px;
-        background: $primary-color;
-        width: 100%;
-        -webkit-transition: $global-transition;
-        transition: $global-transition;
-        -webkit-transform: scaleX(0) translate3d(0, 0, 0);
-        transform: scaleX(0) translate3d(0, 0, 0); // hide
+      background: linear-gradient(120deg, #b4b4d9 0%, #84c6f5 100%);
+      background-repeat: no-repeat;
+      background-size: 100% 0%;
+      background-position: 0 88%;
+      transition: background-size 0.25s ease-in;
+      &:before {//여기
+        
+        background-size: 100% 100%;
+  
       }
 
-      &:hover:before {
+      &:hover {
+        background-size: 100% 80%;
+    //       &:hover {
+    //   // color: $masthead-link-color-hover;
+    //   background-size: 100% 100%;
+    // }
         -webkit-transform: scaleX(1);
         -ms-transform: scaleX(1);
         transform: scaleX(1); // reveal
@@ -268,9 +294,9 @@
     border: 1px solid $border-color;
     border-radius: $border-radius;
     background: $background-color;
-    -webkit-box-shadow: 0 2px 4px 0 rgba(#000, 0.16),
-      0 2px 10px 0 rgba(#000, 0.12);
-    box-shadow: 0 2px 4px 0 rgba(#000, 0.16), 0 2px 10px 0 rgba(#000, 0.12);
+    // -webkit-box-shadow: 0 2px 4px 0 rgba(#000, 0.16),
+    //   0 2px 10px 0 rgba(#000, 0.12);
+    // box-shadow: 0 2px 4px 0 rgba(#000, 0.16), 0 2px 10px 0 rgba(#000, 0.12);
 
     &.hidden {
       display: none;
@@ -418,7 +444,7 @@
     }
 
     ul {
-      margin-bottom: 1em;
+      // margin-bottom: 1em;
     }
 
     a {
@@ -430,9 +456,9 @@
         padding-bottom: 0.125em;
       }
 
-      &:hover {
-        text-decoration: underline;
-      }
+      // &:hover {
+     // text-decoration: underline;
+      // }
     }
   }
 }
@@ -496,7 +522,7 @@
   font-size: $type-size-6;
   font-weight: bold;
   text-transform: uppercase;
-  border-bottom: 1px solid $border-color;
+  // border-bottom: 1px solid $border-color;
 }
 
 /*
@@ -505,24 +531,30 @@
 
 .toc {
   font-family: $sans-serif-narrow;
-  color: $gray;
+  // color: $gray;
   background-color: $background-color;
-  border: 1px solid $border-color;
-  border-radius: $border-radius;
-  -webkit-box-shadow: $box-shadow;
-  box-shadow: $box-shadow;
+  // border: 1px solid $border-color;
+  // border-radius: $border-radius;
+  // -webkit-box-shadow: $box-shadow;
+  // box-shadow: $box-shadow;
 
   .nav__title {
-    color: #fff;
+    color: $primary-color;
     font-size: $type-size-6;
-    background: $primary-color;
-    border-top-left-radius: $border-radius;
-    border-top-right-radius: $border-radius;
+    // background: $primary-color;
+    // border-top-left-radius: $border-radius;
+    // border-top-right-radius: $border-radius;
   }
 
   // Scrollspy marks toc items as .active when they are in focus
+  // navigation bar content 볼 때 색깔
   .active a {
-    @include yiq-contrasted($active-color);
+    // @include yiq-contrasted($active-color);
+    // background: linear-gradient(to top, #FFBB00 50%, transparent 50%);
+    // color:#fff;
+    // background-image: linear-gradient(120deg, #B9B4E0 0%,transparent 100%);
+    font-weight: bold;
+    // @include yiq-contrasted(#736e76);
   }
 }
 
@@ -538,12 +570,12 @@
   }
 
   a {
-    display: block;
-    padding: 0.25rem 0.75rem;
+    // display: block;
+    // padding: 0.25rem 0.75rem;
     color: $muted-text-color;
     font-weight: bold;
     line-height: 1.5;
-    border-bottom: 1px solid $border-color;
+    // border-bottom: 1px solid $border-color;
 
     &:hover {
       color: $text-color;
@@ -551,23 +583,23 @@
   }
 
   li ul > li a {
-    padding-left: 1.25rem;
+    margin-left: 1.25rem;
     font-weight: normal;
   }
 
   li ul li ul > li a {
-    padding-left: 1.75rem;
+    margin-left: 1.75rem;
   }
 
   li ul li ul li ul > li a {
-    padding-left: 2.25rem;
+    margin-left: 2.25rem;
   }
 
   li ul li ul li ul li ul > li a {
-    padding-left: 2.75rem;
+    margin-left: 2.75rem;
   }
 
   li ul li ul li ul li ul li ul > li a {
-    padding-left: 3.25rem
+    margin-left: 3.25rem
   }
 }

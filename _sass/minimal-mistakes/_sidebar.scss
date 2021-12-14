@@ -89,13 +89,6 @@
       position: sticky;
       top: 2em;
       float: right;
-
-      .toc {
-        .toc__menu {
-          overflow-y: auto;
-          max-height: calc(100vh - 7em);
-        }
-      }
     }
   }
 
@@ -134,7 +127,7 @@
   }
 
   img {
-    max-width: 110px;
+    max-width: 200px;
     border-radius: 50%;
 
     @include breakpoint($large) {
@@ -192,6 +185,7 @@
   vertical-align: middle;
   font-family: $sans-serif;
   z-index: 20;
+  position: relative;
   cursor: pointer;
 
   li:last-child {
@@ -248,7 +242,7 @@
   border: 1px solid $border-color;
   border-radius: $border-radius;
   background: $background-color;
-  box-shadow: 0 2px 4px 0 rgba(#000, 0.16), 0 2px 10px 0 rgba(#000, 0.12);
+  // box-shadow: 0 2px 4px 0 rgba(#000, 0.16), 0 2px 10px 0 rgba(#000, 0.12);
   cursor: default;
 
   &.is--visible {
@@ -318,9 +312,9 @@
     font-size: $type-size-5;
     text-decoration: none;
 
-    &:hover {
-      text-decoration: underline;
-    }
+    // &:hover {
+    //   text-decoration: underline;
+    // }
   }
 }
 

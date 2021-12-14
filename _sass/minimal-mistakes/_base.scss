@@ -11,7 +11,8 @@ html {
 body {
   margin: 0;
   padding: 0;
-  color: $text-color;
+  // color: $text-color;
+  color: #7c7580;
   font-family: $global-font-family;
   line-height: 1.5;
 
@@ -27,7 +28,7 @@ h3,
 h4,
 h5,
 h6 {
-  margin: 2em 0 0.5em;
+  margin: 1em 0 0.5em;
   line-height: 1.2;
   font-family: $header-font-family;
   font-weight: bold;
@@ -131,11 +132,13 @@ a {
   }
 
   &:visited {
-    color: $link-color-visited;
+    color: #9391A4;
+    // 읽은 경우 색깔
   }
 
   &:hover {
-    color: $link-color-hover;
+    // color: $link-color-hover;
+    color: linear-gradient(120deg, #ddd6f3 0%,#faaca8 100%);
     outline: 0;
   }
 }
@@ -168,8 +171,11 @@ td > code {
   padding-top: 0.1rem;
   padding-bottom: 0.1rem;
   font-size: 0.8em;
-  background: $code-background-color;
-  border-radius: $border-radius;
+  // background: #e6e5e6;
+  background: linear-gradient(120deg, #99B9C5 0%,#B9B4E0 100%);
+  border-radius: 0.2rem;
+  color : #fff;
+  // backtic일 경우 
 
   &:before,
   &:after {
