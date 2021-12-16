@@ -43,7 +43,7 @@
                 <h3 class="archive__item-excerpt" itemprop="description">{{ post.subtitle | markdownify | strip_html | truncate: 160 }}</h3>
               </div>{% endif %}
               <div class="archive__item-title-time">
-                <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> <time datetime="{{ post.first_writed_at | date_to_xmlschema }}">{{ post.first_writed_at | date: "%B %-d, %Y" }}</time>
+                  <i class="fas fa-fw fa-feather-alt" aria-hidden="true"></i> <time datetime="{{ post.first_writed_at | date_to_xmlschema }}">{{ post.first_writed_at | date: "%Y.%m.%-d"  }}</time> <i class="fas fa-fw fa-cut" aria-hidden="true"></i>&nbsp;<time datetime="{{ post.last_modified_at | date_to_xmlschema }}">{{ post.last_modified_at | date: "%Y.%m.%-d" }}</time>
               </div>{% endif %}
       </div>{% endif %}
   </article>
